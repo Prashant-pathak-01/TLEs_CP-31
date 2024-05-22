@@ -1,0 +1,37 @@
+import java.util.*;
+ 
+public class Solution {
+    public static void main(String[] args) {
+    	Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+       		int n = sc.nextInt();
+       		int arr[] = new int[n];
+       		for(int i=0; i<n; i++) arr[i] = sc.nextInt();
+       		boolean flag = false;
+       		boolean res= false;
+       		int result[] = new int[3];
+       		int prev = 0;
+       		for(int i=0; i<n-1; i++){
+       			if(arr[i]<arr[i+1]){
+       				result[0] = i+1;
+       				result[1] = i+2;
+       				prev = arr[i+1];
+       				flag = true;
+       			}
+       			if(flag && prev>arr[i+1]) {
+       				result[2] = i+2;
+       				res=true;
+       				break;
+       			}
+       		}
+       		if(res){
+       			System.out.println("YES");
+       			System.out.println(result[0]+" "+result[1]+" "+result[2]);
+       		}else{
+       			System.out.println("NO");
+       		}
+ 
+        }
+    }
+}

@@ -1,0 +1,26 @@
+import java.util.*;
+ 
+public class Solution {
+    public static void main(String[] args) {
+    	Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+       		int num = sc.nextInt();
+            int res= 0;
+            while(num!=1){
+            	if(num%3==0) {
+            		if(num%2!=0) {
+            			num*=2;
+            			res++;
+            		}
+            		num/=6;
+            		res++;
+            	}else {
+            		res=-1;
+            		break;
+            	}
+            }
+            System.out.println(res);
+        }
+    }
+}
