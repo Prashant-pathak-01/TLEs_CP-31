@@ -1,0 +1,36 @@
+import java.util.*;
+ 
+public class Solution {
+    public static void main(String[] args) {
+    	Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+        	int n = sc.nextInt();
+        	int arr[] = new int[n];
+        	Map<Integer,Integer> map = new HashMap<>();
+        	List<Integer> list = new ArrayList<>();
+        	for(int i=0; i<n; i++){
+        		int temp = sc.nextInt();
+        		map.put(temp,map.getOrDefault(temp,0)+1);
+        		if(!list.contains(temp)) list.add(temp);
+        	}
+        	if(map.size()>2){
+        		System.out.println("No");
+        	}else{
+        		if(map.size()==1){
+        			System.out.println("Yes");
+        		}else{
+        			if(n%2==0){
+        				if(map.get(list.get(0))!=map.get(list.get(1))) System.out.println("No");
+        				else System.out.println("Yes");
+        			}else{
+        				if(map.get(list.get(0))==map.get(list.get(1))+1 || map.get(list.get(0))==map.get(list.get(1))-1 ) {
+        					System.out.println("Yes");
+        				}else System.out.println("No");
+        			}
+        		}
+        	}
+ 
+        }
+    }
+}

@@ -1,0 +1,17 @@
+import java.util.*;
+ 
+public class Solution {
+    public static void main(String[] args) {
+    	Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+        	int n = sc.nextInt();
+        	String str = sc.next();
+        	int i=0;
+        	int j = n-1;
+        	int count= 0 ;
+        	while(i<j && str.charAt(i++)!=str.charAt(j--)) count+=2;
+        	System.out.println(n-count);
+        }
+    }
+}

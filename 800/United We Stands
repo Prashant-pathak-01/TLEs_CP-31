@@ -1,0 +1,35 @@
+import java.util.*;
+ 
+public class Solution {
+    public static void main(String[] args) {
+    	Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+        	int n = sc.nextInt();
+        	int arr[] = new int[n];
+        	for(int i=0; i<n; i++) arr[i] = sc.nextInt();
+        	Arrays.sort(arr);
+        	if(arr[0]==arr[n-1]){
+        		System.out.println(-1);
+        	}else{
+        		int i=1;
+        		int count = 1;
+        		int x = 1;
+        		while(x<n && arr[x]==arr[x-1]) {
+	        		count++;
+	        		x++;
+        		}
+        		System.out.println(count+" "+(n-count));
+        		System.out.print(arr[0]+" ");
+        		while(i<n && arr[i]==arr[i-1]) {
+	        		System.out.print(arr[i++]+" ");
+        		}
+        		System.out.println();
+        		while(i<n) {
+	        		System.out.print(arr[i++]+" ");
+        		}
+        		System.out.println();
+        	}
+        }
+    }
+}

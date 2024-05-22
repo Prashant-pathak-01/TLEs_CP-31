@@ -1,0 +1,35 @@
+import java.util.*;
+ 
+public class Solution {
+    public static void main(String[] args) {
+    	Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+        	int n = sc.nextInt();
+        	int m = sc.nextInt();
+        	String str1 = sc.next();
+        	String str2 = sc.next();
+        	int count =0 ;
+        	boolean found = false;
+        	while(str1.length()<str2.length()){
+        		if(str1.contains(str2)) {
+        			found  = true;
+        			break;
+        		}
+        		str1 = str1+str1;
+        		count++;
+        	}
+        	if(str1.contains(str2)) {
+        			found = true;
+        		}
+        	str1 = str1+str1;
+        	if(!found && str1.contains(str2)) {
+        		found  = true;
+        		count++;
+        	}
+        	if(found) System.out.println(count);
+        	else System.out.println(-1);
+ 
+        }
+    }
+}
